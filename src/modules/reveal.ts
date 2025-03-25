@@ -17,7 +17,7 @@ export const generateRef = () => {
             transition: 'slide',
         });
 
-        deckRef.current.initialize();
+        deckRef.current.initialize({ slideNumber: true });
 
         return () => {
             try {

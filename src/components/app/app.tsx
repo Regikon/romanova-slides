@@ -1,8 +1,8 @@
-import LogisticRegressionPresentation from "../logistic_regression_presentation/logistic_regression_presentation";
+import RecurrentNeuralNetwork from "../recurrent_neural_network_presentation/recurrent_neural_network";
 
 function App() {
 	return (
-		<LogisticRegressionPresentation />
+		<RecurrentNeuralNetwork />
 	);
 }
 

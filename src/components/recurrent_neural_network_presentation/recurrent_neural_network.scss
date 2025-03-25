@@ -1,0 +1,32 @@
+.right-side-text {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.left-side-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.bottom-text {
+  vertical-align: text-bottom;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-text
+{
+  color: green
+}
+
+.red-text
+{
+  color: red
+}
