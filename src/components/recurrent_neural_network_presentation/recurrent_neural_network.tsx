@@ -6,6 +6,12 @@ import HumanTranslator from "./human_translator.jpg"
 import BobrKurwa from "./bobr_kurwa.jpeg"
 import ExponentaTranslate from "./exponenta_translate.png"
 import NnTranslate from "./nn_translate.jpg"
+import SimpleRnn from "./simple_rnn.png"
+import RnnModel from "./rnn_model.jpg"
+import RnnExample1 from "./easy_example_p1.jpg" 
+import RnnExample2 from "./easy_example_p2.jpg"
+import RnnExample3 from "./easy_example_p3.jpg"
+import RnnExample4 from "./easy_example_p4.jpg"
 
 function RecurrentNeuralNetwork() {
     const deckDivRef = generateRef();
@@ -32,38 +38,86 @@ function RecurrentNeuralNetwork() {
                     </ol>
                 </section>
                 <section> 
-                    {/* У меня было время экспериментов, но сам цвет мне не нравится, надо поменять*/}
-                    <section data-background-color="aquamarine">
-                        <div className = "container">
-                            <img className = "img_col" src={BobrKurwa}/>
-                            <div>Задача: перевести новую книгу Анджея Сапковского</div>
+                    <section>
+                        <div className = "container-in-half-slide">
+                            <img src={BobrKurwa}/>
+                            <div>Представим, что нам нужно перевести новую книгу Анджея Сапковского</div>
                         </div>
                     </section>
                     <section>
-                        <div className = "container">
+                        <div className = "container-in-half-slide">
                             <img src={HumanTranslator} />
                             <div>
-                                <p className="fragment green-text">Качественный перевод</p>
-                                <p className="fragment red-text">Большие временные затраты</p>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-green">Качественный перевод</p>
+                                </span>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-red">Большие временные затраты</p>
+                                </span>
                             </div>
                         </div>
                     </section>
                     <section>
-                        <div className = "container">
-                            <img className = "image-left" src={ExponentaTranslate} />
+                        <div className = "container-in-half-slide">
+                            <img src={ExponentaTranslate} />
                             <div>
-                                <p className="fragment red-text"> Низкое качество перевода</p>
-                                <p className="fragment green-text"> Быстрая обработка текста</p>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-green">Быстрая обработка текста</p>
+                                </span>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-red">Низкое качество перевода</p>
+                                </span>
                             </div>
                         </div>
                     </section>
                     <section>
-                        <div className = "container">
-                            <img className = "image-left" src={NnTranslate} />
+                        <div className = "container-in-half-slide">
+                            <img src={NnTranslate}/>
                             <div>
-                                <p className="fragment green-text"> Качественный перевод</p>
-                                <p className="fragment green-text"> Быстрая обработка текста</p>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-green">Качественный перевод</p>
+                                </span>
+                                <span className="fragment"> 
+                                    <p className="fragment highlight-green">Быстрая обработка текста</p>
+                                </span>
                             </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <h4>Рекуррентная нейронная сеть</h4>
+                    <div className="container-center">
+                        <img src={SimpleRnn}/>
+                            <small> 
+                                <p className="fragment">
+                                Ключевая идея: RNN имеют «внутреннее состояние», которое обновляется по мере обработки последовательности.
+                                </p>
+                            </small>
+                    </div>
+                </section>
+                <section>
+                    <h4>Модель рекуррентной нейронной сети</h4>
+                    <div>
+                        <img src={RnnModel} className="img_horizontal"/>
+                        <div className="r-fit-text">
+                            Мы можем обрабатывать последовательность векторов x, применяя рекуррентную формулу на каждом временном шаге:
+                            <p>
+                                {String.raw`$$ h_t = f_W(h_{t-1}, x_t)$$`}
+                            </p>
+                            <p>
+                                {String.raw`$$ y_t = f_{W_{hy}}(h_t)$$`}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section> 
+                    <section>
+                        <h4>Пример работы в картинках</h4>
+                        <div className="r-stack">
+                            <img src={RnnExample1} className="fragment fade-up fade-in-then-out"/>
+                            <img src={RnnExample2} className="fragment fade-up fade-in-then-out"/>
+                            <img src={RnnExample3} className="fragment fade-up fade-in-then-out"/>
+                            <img src={RnnExample4} className="fragment fade-up"/>
                         </div>
                     </section>
                 </section>

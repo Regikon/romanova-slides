@@ -13,20 +13,28 @@
 .bottom-text {
   vertical-align: text-bottom;
 }
-
-.container{
+.container-in-half-slide {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
 
-.green-text
-{
-  color: green
+.container-center {
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; 
+  max-width: 500px;
 }
 
-.red-text
-{
-  color: red
+.container-center img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img_horizontal {
+  max-width: 100%;
+  height: 350px;
 }
