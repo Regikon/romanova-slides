@@ -111,12 +111,13 @@ function RecurrentNeuralNetwork() {
                     </div>
                 </section>
                 <section> 
-                    <section>
-                        <h4>Пример работы в картинках</h4>
+                    <section data-background-image="https://i.pinimg.com/originals/6c/90/28/6c90288d7e10d46d18895f17f420a92c.gif">
+                        <h4 className="white_text"> Пример из жизни</h4>
                         <div className="r-stack">
                             <img src={RnnExample1} className="fragment fade-up fade-in-then-out"/>
                             <img src={RnnExample2} className="fragment fade-up fade-in-then-out"/>
                             <img src={RnnExample3} className="fragment fade-up fade-in-then-out"/>
+                            <img src={RnnExample1} className="fragment fade-up fade-in-then-out"/>
                             <img src={RnnExample4} className="fragment fade-up"/>
                         </div>
                     </section>
