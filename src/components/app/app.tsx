@@ -5,13 +5,11 @@ import TheBestRoutingPage from "../the_best_routing_page/the_best_routing_pate";
 
 function App() {
     return (
-        <HashRouter>
+        <HashRouter basename="/">
             <Routes>
-                <Route path="romanova-slides" >
-                    <Route index element={<TheBestRoutingPage />} />
-                    <Route path="logreg" element={<LogisticRegressionPresentation />} />
-                    <Route path="rnn" element={<RecurrentNeuralNetwork />} />
-                </Route>
+                <Route index element={<TheBestRoutingPage />} />
+                <Route path="logreg" element={<LogisticRegressionPresentation />} />
+                <Route path="rnn" element={<RecurrentNeuralNetwork />} />
             </Routes>
         </HashRouter>
     );

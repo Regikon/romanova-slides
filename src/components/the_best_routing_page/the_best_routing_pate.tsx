@@ -1,13 +1,14 @@
 import "./the_best_routing_pate.scss";
+import { Link } from "react-router";
 
 function TheBestRoutingPage() {
     return (
         <div className="routing-page">
             <ol>
-                <li><a href="logreg"> Логистическая регрессия </a></li>
-                <li><a href="rnn"> Рекуррентные нейронные сети</a></li>
+                <li><Link to="logreg"> Логистическая регрессия </Link></li>
+                <li><Link to="rnn"> Рекуррентные нейронные сети</Link></li>
             </ol>
-        </div>
+        </div >
     )
 }
 
