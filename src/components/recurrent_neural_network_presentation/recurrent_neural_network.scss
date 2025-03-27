@@ -34,6 +34,21 @@
   height: auto;
 }
 
+.horizontal-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.some-gap {
+  gap: 50px;
+}
+
 .img_horizontal {
   max-width: 100%;
   height: 350px;
