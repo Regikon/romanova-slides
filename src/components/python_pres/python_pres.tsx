@@ -12,7 +12,7 @@ import SocketTry from './socket_try.jpg'
 import Imports from './imports.jpg'
 import ProjectStructure from './project_structure.jpg'
 import PythonClass from './python_class.jpg'
-import TcpStream from '../../../public/tcp_stream.py'
+import TcpStream from '../../../public/tcp_stream.py?url'
 
 function PythonPres() {
 	const deckDivRef = generateRef();
@@ -136,8 +136,10 @@ function PythonPres() {
 					</section>
 				</section>
 				<section>
-					<a href={TcpStream}><h5>Классы</h5></a>
-					<img src={PythonClass} />
+					<section>
+						<a href={TcpStream}><h5>Классы</h5></a>
+						<img src={PythonClass} />
+					</section>
 				</section>
 			</div>
 		</div >
