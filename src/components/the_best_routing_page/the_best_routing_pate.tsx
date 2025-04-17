@@ -6,7 +6,8 @@ function TheBestRoutingPage() {
         <div className="routing-page">
             <ol>
                 <li><Link to="logreg"> Логистическая регрессия </Link></li>
-                <li><Link to="rnn"> Рекуррентные нейронные сети</Link></li>
+                <li><Link to="rnn"> Рекуррентные нейронные сети </Link></li>
+                <li><Link to="python"> Основы Python </Link></li>
             </ol>
         </div >
     )
