@@ -6,6 +6,13 @@ import SmallPython from './small_python.jpg'
 import Django from './django.jpg'
 import Pytorch from './pytorch.png'
 import GarbageCollector from './garbage_collector.png'
+import LogoutFunc from './logout_func.jpg'
+import LambdaFunc from './lambda_func.jpg'
+import SocketTry from './socket_try.jpg'
+import Imports from './imports.jpg'
+import ProjectStructure from './project_structure.jpg'
+import PythonClass from './python_class.jpg'
+import TcpStream from '../../../public/tcp_stream.py'
 
 function PythonPres() {
 	const deckDivRef = generateRef();
@@ -79,6 +86,58 @@ function PythonPres() {
 				<section>
 					(Ненастоящая) модель памяти и сборщик мусора
 					<img src={GarbageCollector} />
+				</section>
+				<section>
+					<section>
+						<h5>Неизменяемые типы данных</h5>
+						<ul>
+							<li>int - любое произвольное целое число</li>
+							<li>float - любое произовольная десятичная дробь</li>
+							<li>str - строка</li>
+							<li>tuple - упорядоченная неизменяемая коллекция (кортеж)</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Изменяемые типы данных</h5>
+						<ul>
+							<li>List - список значений любого типа</li>
+							<li>Dict - ассоциативный массив (отображение)</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Ахтунг!</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h5>Функции</h5>
+						<div>Функции в Python являются объектами первого рода. Это означает,
+							что их можно использовать как переменные.</div>
+					</section>
+					<section>
+						<img src={LogoutFunc} />
+					</section>
+					<section>
+						<img src={LambdaFunc} />
+					</section>
+				</section>
+				<section>
+					<h5>Обработка ошибок</h5>
+					<img src={SocketTry} />
+				</section>
+				<section>
+					<section>
+						<div>Программы в Python как правило делят на модули.
+							Модули подключаются при помощи директивы import</div>
+						<img src={ProjectStructure} />
+					</section>
+					<section>
+						<img src={Imports} />
+					</section>
+				</section>
+				<section>
+					<a href={TcpStream}><h5>Классы</h5></a>
+					<img src={PythonClass} />
 				</section>
 			</div>
 		</div >
