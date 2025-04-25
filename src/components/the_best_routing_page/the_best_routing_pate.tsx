@@ -14,6 +14,9 @@ function TheBestRoutingPage() {
         <li>
           <Link to="python"> Основы Python </Link>
         </li>
+        <li>
+          <Link to="edac"> Контроль ошибок при передаче данных </Link>
+        </li>
       </ol>
     </div>
   );

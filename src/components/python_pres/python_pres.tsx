@@ -1,4 +1,4 @@
-import { generateRef } from '../../modules/reveal';
+import { useReveal } from '../../modules/reveal';
 import ROS2Config from './ros2_config.jpg';
 import IdaPro from './ida_pro.jpg';
 import IdaPython from './ida_python.jpg';
@@ -12,10 +12,10 @@ import SocketTry from './socket_try.jpg';
 import Imports from './imports.jpg';
 import ProjectStructure from './project_structure.jpg';
 import PythonClass from './python_class.jpg';
-import TcpStream from '../../../public/tcp_stream.py?url';
+import TcpStream from '/tcp_stream.py?url';
 
 function PythonPres() {
-  const deckDivRef = generateRef();
+  const deckDivRef = useReveal();
 
   return (
     <div className="reveal" ref={deckDivRef}>

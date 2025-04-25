@@ -1,6 +1,6 @@
 import '@/scss/reveal.scss';
 import '@/scss/themes/white.scss';
-import { generateRef } from '../../modules/reveal';
+import { useReveal } from '../../modules/reveal';
 import './recurrent_neural_network.scss';
 import HumanTranslator from './human_translator.jpg';
 import BobrKurwa from './bobr_kurwa.jpeg';
@@ -29,7 +29,7 @@ import BuffDoge from './buff-doge.webp';
 import AdvancedRnn from './advanced-rnn.jpg';
 
 function RecurrentNeuralNetwork() {
-  const deckDivRef = generateRef();
+  const deckDivRef = useReveal();
 
   return (
     <div className="reveal" ref={deckDivRef}>

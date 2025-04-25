@@ -4,7 +4,7 @@ import RevealNotes from 'reveal.js/plugin/notes/notes.esm';
 import RevealMath from 'reveal.js/plugin/math/math';
 
 // generateRef generates react ref to be binded to presentation
-export const generateRef = () => {
+export const useReveal = () => {
   const deckDivRef = useRef<HTMLDivElement>(null);
   const deckRef = useRef<Reveal.Api | null>(null);
 
@@ -17,7 +17,7 @@ export const generateRef = () => {
       transition: 'slide',
     });
 
-    deckRef.current.initialize({ slideNumber: true });
+    deckRef.current.initialize({ slideNumber: false });
 
     return () => {
       try {

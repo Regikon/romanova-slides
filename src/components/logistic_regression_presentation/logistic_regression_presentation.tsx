@@ -1,13 +1,13 @@
 import '@/scss/reveal.scss';
 import '@/scss/themes/white.scss';
-import { generateRef } from '../../modules/reveal';
+import { useReveal } from '../../modules/reveal';
 import './logistic_regression_presentation.scss';
 import SigmoidGraph from './sigmoid.jpg';
 import FadeAwayGif from './fade_away.gif';
 import ThumbUp from './thumb_up.jpg';
 
 function LogisticRegressionPresentation() {
-  const deckDivRef = generateRef();
+  const deckDivRef = useReveal();
 
   return (
     <div className="reveal" ref={deckDivRef}>
