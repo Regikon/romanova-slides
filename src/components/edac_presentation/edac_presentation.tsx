@@ -89,8 +89,40 @@ function EdacPresentation() {
         </section>
         <section>
           <section>
+            <h3>
+              Теоретические основы
+            </h3>
+          </section>
+          <section>
+            <h3>
+              Сначала было слово и слово было "код"
+            </h3>
+          </section>
+          <section>
+            <h3>
+              Блочное кодирование
+            </h3>
+          </section>
+          <section>
+            <h3>
+              Метрики
+            </h3>
+          </section>
+          <section>
+            <h3>
+            Сколько ошибок мы способны найти? А исправить?
+            </h3>
+          </section>
+          <section>
+            <h3>
+             А что если код - это полином? 
+            </h3>
+          </section>
+        </section>
+        <section>
+          <section>
             <div>
-              <h3> Обнаружения ошибок с помощью контрольных сумм </h3>
+              <h3> Обнаружение ошибок с помощью контрольных сумм </h3>
             </div>
             <div>
               <img className="fragment" src={EthernetMsg} width="90%" />
@@ -163,7 +195,7 @@ function EdacPresentation() {
             </div>
           </section>
           <section>
-            <h3>Что это для нас значит?</h3>
+            <h3>Собственно, а зачем нам это нужно?</h3>
               <div>
                 <img src={CrcQuestion} width="40%" />
               </div>
