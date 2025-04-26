@@ -21,10 +21,10 @@ import CheckSum2 from './resources/checksum2.jpg';
 import CheckSum3 from './resources/checksum3.jpg';
 import CheckSumProblem from './resources/checksum_problem.jpg';
 import CRCvsCheckSum from './resources/CRCvsChecksum.webp';
-import CRC_use1 from './resources/crc_use1.png';
-import CRC_use2 from './resources/crc_use2.png';
-import CRC_use3 from './resources/crc_use3.png';
-import CRC_use4 from './resources/crc_use4.png';
+import CRC_use1 from './resources/CRC_use1.png';
+import CRC_use2 from './resources/CRC_use2.png';
+import CRC_use3 from './resources/CRC_use3.png';
+import CRC_use4 from './resources/CRC_use4.png';
 import CycleCode from './resources/cycle_code.png';
 import PolynomialGenerator from './resources/generator_crc.png';
 import CrcQuestion from './resources/crc_questions.gif';
@@ -37,8 +37,11 @@ import HammingEx0 from './resources/hamming_ex0.png';
 import HammingEx1 from './resources/hamming_ex1.png';
 import HammingEx21 from './resources/hamming_ex2_1.png';
 import HammingEx2 from './resources/hamming_ex2.png';
-import HammingEx31 from './resources/hamming_ex31.png'; 
-import HammingEx3 from './resources/hamming_ex3.png'; 
+import HammingEx31 from './resources/hamming_ex31.png';
+import HammingEx3 from './resources/hamming_ex3.png';
+import MinecraftCoding from './resources/minecraft_coding.png';
+import Ruler from './resources/ruler.jpg';
+
 // Error detection and correction (Edac)
 function EdacPresentation() {
   const deckDivRef = useReveal();
@@ -75,7 +78,7 @@ function EdacPresentation() {
           <section>
             <div>
               <h2> Корректирующие методы </h2>
-              <div className="two-columns-container">               
+              <div className="two-columns-container">
                 <ol>
                   <li> Упреждающая коррекция ошибок (FEC)</li>
                   <li> Коррекция ошибок с повторной передачей (Backward Error Correction)</li>
@@ -85,7 +88,7 @@ function EdacPresentation() {
                 </div>
               </div>
             </div>
-          </section>  
+          </section>
         </section>
         <section>
           <section>
@@ -97,26 +100,49 @@ function EdacPresentation() {
             <h3>
               Сначала было слово и слово было "код"
             </h3>
+            <ol>
+              <li>Кодирование - отображение множества слов одного алфавита в множество слов другого</li>
+              <li>Исходное слово - данные до процедуры кодирования</li>
+              <li>Кодовое слово - данные после процедуры кодирования</li>
+              <li>Код - совокупность всех кодовых слов</li>
+            </ol>
           </section>
           <section>
             <h3>
               Блочное кодирование
             </h3>
+            Мы будем говорить про блочные коды, то есть коды фиксированной длины.
+            <img src={MinecraftCoding} />
           </section>
           <section>
             <h3>
               Метрики
             </h3>
+            <div className="two-columns-container">
+              <div>{String.raw`1101`}</div>
+              <div>{String.raw`1000`}</div>
+            </div>
+            <img className="ruler-pic" width="45%" src={Ruler} />
           </section>
           <section>
             <h3>
-            Сколько ошибок мы способны найти? А исправить?
+              Сколько ошибок мы способны найти? А исправить?
             </h3>
+            <ul>
+              <li>Исправление k ошибок {String.raw`$d_{min} \ge 2k + 1$`}</li>
+              <li>Обнаружение k ошибок {String.raw`$d_{min} \ge k + 1$`}</li>
+            </ul>
+            <div>Утверждения точно верны для метрики Хэмминга</div>
           </section>
           <section>
             <h3>
-             А что если код - это полином? 
+              А что если код - это полином?
             </h3>
+            <div>
+              <div>{String.raw`$1101$`}</div>
+              <div>{String.raw`$\downarrow$`}</div>
+              <div>{String.raw`$1 \cdot x^3 + 1 \cdot x^2 + 0 \cdot x + 1$`}</div>
+            </div>
           </section>
         </section>
         <section>
@@ -130,9 +156,9 @@ function EdacPresentation() {
           </section>
           <section>
             <div>
-            <img className="fragment" src={CheckSum1} width="90%" />
-            <img className="fragment" src={CheckSum2} width="90%" />
-            <img className="fragment" src={CheckSum3} width="90%" />
+              <img className="fragment" src={CheckSum1} width="90%" />
+              <img className="fragment" src={CheckSum2} width="90%" />
+              <img className="fragment" src={CheckSum3} width="90%" />
             </div>
           </section>
           <section>
@@ -161,18 +187,18 @@ function EdacPresentation() {
               <h3>Циклический избыточный код (CRC)</h3>
             </div>
             <div>
-            Циклический избыточный код (CRC, Cyclic Redundancy Check) — это один из ключевых методов обеспечения целостности данных при передаче и хранении.
+              Циклический избыточный код (CRC, Cyclic Redundancy Check) — это один из ключевых методов обеспечения целостности данных при передаче и хранении.
             </div>
           </section>
           <section>
-              <h3>Где применяется? (CRC)</h3>
-              <div className="r-stack">
-                <img className="fragment fade-in-then-out" src={EthernetMsg} width="90%" />
-                <img className="fragment fade-in-then-out" src={CRC_use1} width="90%" />
-                <img className="fragment fade-in-then-out" src={CRC_use2} width="90%" />
-                <img className="fragment fade-in-then-out" src={CRC_use3} width="80%" />
-                <img className="fragment" src={CRC_use4} width="90%" />
-              </div>
+            <h3>Где применяется? (CRC)</h3>
+            <div className="r-stack">
+              <img className="fragment fade-in-then-out" src={EthernetMsg} width="90%" />
+              <img className="fragment fade-in-then-out" src={CRC_use1} width="90%" />
+              <img className="fragment fade-in-then-out" src={CRC_use2} width="90%" />
+              <img className="fragment fade-in-then-out" src={CRC_use3} width="80%" />
+              <img className="fragment" src={CRC_use4} width="90%" />
+            </div>
           </section>
           <section>
             <div>
@@ -183,25 +209,25 @@ function EdacPresentation() {
             </div>
             <div className='small-text'>
               Все строки матрицы могут быть получены циклическим сдвигом одной строки, которая называется образующей или производящей.
-            </div>  
+            </div>
           </section>
           <section>
             <h3>Порождающий полином</h3>
             <div className='r-stack'>
               <div className='fragment fade-out'>Любая разрешенная кодовая комбинация циклического кода может быть образована в результате умножения образующего полинома на некоторый другой полином. Т.е., при соответствующем выборе образующего полинома, любой многочлен циклического кода (или нашем случае кодовое слово) будет делиться на него без остатка</div>
-              <div className ='fragment' >
+              <div className='fragment' >
                 <img src={PolynomialGenerator} width="100%" />
               </div>
             </div>
           </section>
           <section>
             <h3>Собственно, а зачем нам это нужно?</h3>
-              <div>
-                <img src={CrcQuestion} width="40%" />
-              </div>
-              <div className='fragment'>
-                Цель кодировщика CRC - превратить сообщение в кодовое слово циклического кода
-              </div>
+            <div>
+              <img src={CrcQuestion} width="40%" />
+            </div>
+            <div className='fragment'>
+              Цель кодировщика CRC - превратить сообщение в кодовое слово циклического кода
+            </div>
           </section>
           <section>
             <h3> Как мы это делаем? </h3>
@@ -218,40 +244,40 @@ function EdacPresentation() {
               </div>
             </div>
             <div className='fragment small-text'>
-                Закодированное сообщение - 11010110111110 
-              </div>
+              Закодированное сообщение - 11010110111110
+            </div>
           </section>
         </section>
         <section>
-          <section>           
+          <section>
             <h3> Код Хэмминга </h3>
             <div>
-              Коды, в которых возможно автоматическое исправление ошибок, называются самокорректирующимися. 
+              Коды, в которых возможно автоматическое исправление ошибок, называются самокорректирующимися.
             </div>
           </section>
           <section>
-          <h3> Параметры кода Хэмминга </h3>
-          <div>
+            <h3> Параметры кода Хэмминга </h3>
+            <div>
               Классический код Хэмминга имеет параметры (n, k), где:
               <ul>
                 <li> n = 2r − 1 — длина кодового слова; </li>
                 <li> k = n − r — число информационных битов; </li>
                 <li> r — число проверочных битов. </li>
-              </ul> 
-          </div>
+              </ul>
+            </div>
           </section>
           <section>
             <h3> Где используется?</h3>
-              <ul>
-                <li> В некоторых прикладных программах в области хранения данных;</li>
-                <li> При построении дисковых массивов RAID 2;</li>
-                <li> В памяти типа ECC и позволяет «на лету» исправлять однократные и обнаруживать двукратные ошибки.</li>
-              </ul>
+            <ul>
+              <li> В некоторых прикладных программах в области хранения данных;</li>
+              <li> При построении дисковых массивов RAID 2;</li>
+              <li> В памяти типа ECC и позволяет «на лету» исправлять однократные и обнаруживать двукратные ошибки.</li>
+            </ul>
           </section>
           <section>
             <h2> Предупреждение! </h2>
             <div>
-              Далее будет представлено описание работы кодов Хэмминга, но почему так происходит в рамках данного доклада мы рассматривать не будем. В целом аудитория вполне может считать это магией! 
+              Далее будет представлено описание работы кодов Хэмминга, но почему так происходит в рамках данного доклада мы рассматривать не будем. В целом аудитория вполне может считать это магией!
             </div>
             <div>
               <img src={Magic} width="30%" />
@@ -317,8 +343,8 @@ function EdacPresentation() {
           <section>
             <h3>Пример декодирования</h3>
             <div className='small-text'>
-                Предположим, что при передаче данного сообщения произошло искажение в каком-либо информационном разряде, например, в третьем
-                <img src={HammingEx3} width="40%" />
+              Предположим, что при передаче данного сообщения произошло искажение в каком-либо информационном разряде, например, в третьем
+              <img src={HammingEx3} width="40%" />
             </div>
             <div className='r-stack'>
               <div className='fragment fade-in-then-out'>
@@ -326,7 +352,7 @@ function EdacPresentation() {
                 <img src={HammingEx31} width="50%" />
               </div>
               <div className='fragment'>
-              Полученный код S4S3S2S1 = `0011, следовательно искажение произошло в третьем разряде.
+                Полученный код S4S3S2S1 = `0011, следовательно искажение произошло в третьем разряде.
               </div>
             </div>
           </section>
