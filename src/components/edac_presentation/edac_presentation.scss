@@ -7,3 +7,32 @@
 .bottom-text {
   vertical-align: text-bottom;
 }
+
+.two-columns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dushka-caption {
+  color: #DDDDDD !important;
+  -webkit-text-stroke: 2px #000;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.normal-text {
+  font-size: 1em;
+}
+
+.small-text {
+  font-size: 0.9em;
+}
+
+.left-align {
+  text-align: start;
+}
+
