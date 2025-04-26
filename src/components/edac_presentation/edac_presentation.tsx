@@ -13,7 +13,32 @@ import Dushka from './resources/dushka.jpg';
 import SadEmoji from './resources/sad_emoji.webp';
 import RSDecoder from './resources/decoder.png';
 import VeryInteresting from './resources/very_interesting.png';
-
+import BitSuspicious from './resources/Bit_suspicious.png';
+import ErrorDetection from './resources/error_detection.jpg';
+import EthernetMsg from './resources/ethernet_msg.png';
+import CheckSum1 from './resources/checksum1.jpg';
+import CheckSum2 from './resources/checksum2.jpg';
+import CheckSum3 from './resources/checksum3.jpg';
+import CheckSumProblem from './resources/checksum_problem.jpg';
+import CRCvsCheckSum from './resources/CRCvsChecksum.webp';
+import CRC_use1 from './resources/crc_use1.png';
+import CRC_use2 from './resources/crc_use2.png';
+import CRC_use3 from './resources/crc_use3.png';
+import CRC_use4 from './resources/crc_use4.png';
+import CycleCode from './resources/cycle_code.png';
+import PolynomialGenerator from './resources/generator_crc.png';
+import CrcQuestion from './resources/crc_questions.gif';
+import CrcProcess from './resources/CRC_example.jpg';
+import XOR from './resources/xor.png';
+import Magic from './resources/magic.png'
+import ControlBits from './resources/hamming_controlbyte.png';
+import HammingCheck from './resources/hamming_check.png';
+import HammingEx0 from './resources/hamming_ex0.png';
+import HammingEx1 from './resources/hamming_ex1.png';
+import HammingEx21 from './resources/hamming_ex2_1.png';
+import HammingEx2 from './resources/hamming_ex2.png';
+import HammingEx31 from './resources/hamming_ex31.png'; 
+import HammingEx3 from './resources/hamming_ex3.png'; 
 // Error detection and correction (Edac)
 function EdacPresentation() {
   const deckDivRef = useReveal();
@@ -33,7 +58,247 @@ function EdacPresentation() {
           </div>
           <span className="bottom-text">{new Date(Date.now()).toLocaleDateString('ru-RU')}</span>
         </section>
-        {/* Здесь мы идем от начала кодов Рида-Соломона, как прочтешь, можно удалить этот коммент */}
+        <section>
+          <section>
+            <div>
+              <h2> Контроль ошибок при передаче данных </h2>
+            </div>
+          </section>
+          <section>
+            <div>
+              <h3> Обнаруживающие методы </h3>
+              <div>
+                <img src={BitSuspicious} width="90%" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <h2> Корректирующие методы </h2>
+              <div className="two-columns-container">               
+                <ol>
+                  <li> Упреждающая коррекция ошибок (FEC)</li>
+                  <li> Коррекция ошибок с повторной передачей (Backward Error Correction)</li>
+                </ol>
+                <div>
+                  <img src={ErrorDetection} width="90%" />
+                </div>
+              </div>
+            </div>
+          </section>  
+        </section>
+        <section>
+          <section>
+            <div>
+              <h3> Обнаружения ошибок с помощью контрольных сумм </h3>
+            </div>
+            <div>
+              <img className="fragment" src={EthernetMsg} width="90%" />
+            </div>
+          </section>
+          <section>
+            <div>
+            <img className="fragment" src={CheckSum1} width="90%" />
+            <img className="fragment" src={CheckSum2} width="90%" />
+            <img className="fragment" src={CheckSum3} width="90%" />
+            </div>
+          </section>
+          <section>
+            <div>
+              <h3>Проблема простой контрольной суммы</h3>
+            </div>
+            <div>
+              <img className="fragment" src={CheckSumProblem} width="80%" />
+            </div>
+            <div className='fragment bold'>
+              Увеличение разрядности не помогает, если используется простое линейное суммирование!
+            </div>
+          </section>
+          <section>
+            <div>
+              <h3>Что же делать?</h3>
+            </div>
+            <div>
+              <img src={CRCvsCheckSum} width="60%" />
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <div>
+              <h3>Циклический избыточный код (CRC)</h3>
+            </div>
+            <div>
+            Циклический избыточный код (CRC, Cyclic Redundancy Check) — это один из ключевых методов обеспечения целостности данных при передаче и хранении.
+            </div>
+          </section>
+          <section>
+              <h3>Где применяется? (CRC)</h3>
+              <div className="r-stack">
+                <img className="fragment fade-in-then-out" src={EthernetMsg} width="90%" />
+                <img className="fragment fade-in-then-out" src={CRC_use1} width="90%" />
+                <img className="fragment fade-in-then-out" src={CRC_use2} width="90%" />
+                <img className="fragment fade-in-then-out" src={CRC_use3} width="80%" />
+                <img className="fragment" src={CRC_use4} width="90%" />
+              </div>
+          </section>
+          <section>
+            <div>
+              <h3> Что такое циклический код?</h3>
+            </div>
+            <div>
+              <img src={CycleCode} width="15%" />
+            </div>
+            <div className='small-text'>
+              Все строки матрицы могут быть получены циклическим сдвигом одной строки, которая называется образующей или производящей.
+            </div>  
+          </section>
+          <section>
+            <h3>Порождающий полином</h3>
+            <div className='r-stack'>
+              <div className='fragment fade-out'>Любая разрешенная кодовая комбинация циклического кода может быть образована в результате умножения образующего полинома на некоторый другой полином. Т.е., при соответствующем выборе образующего полинома, любой многочлен циклического кода (или нашем случае кодовое слово) будет делиться на него без остатка</div>
+              <div className ='fragment' >
+                <img src={PolynomialGenerator} width="100%" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Что это для нас значит?</h3>
+              <div>
+                <img src={CrcQuestion} width="40%" />
+              </div>
+              <div className='fragment'>
+                Цель кодировщика CRC - превратить сообщение в кодовое слово циклического кода
+              </div>
+          </section>
+          <section>
+            <h3> Как мы это делаем? </h3>
+            <div className='r-stack'>
+              <div className='fragment fade-in-then-out'>
+                <img src={CrcProcess} width="65%" />
+              </div>
+              <div className='fragment fade-in-then-out'>
+                <p> Полиномиальная арифметика или двоичная арифметика без учёта переносов</p>
+                <img src={XOR} width="65%" />
+              </div>
+              <div className='fragment'>
+                <img src={CrcProcess} width="65%" />
+              </div>
+            </div>
+            <div className='fragment small-text'>
+                Закодированное сообщение - 11010110111110 
+              </div>
+          </section>
+        </section>
+        <section>
+          <section>           
+            <h3> Код Хэмминга </h3>
+            <div>
+              Коды, в которых возможно автоматическое исправление ошибок, называются самокорректирующимися. 
+            </div>
+          </section>
+          <section>
+          <h3> Параметры кода Хэмминга </h3>
+          <div>
+              Классический код Хэмминга имеет параметры (n, k), где:
+              <ul>
+                <li> n = 2r − 1 — длина кодового слова; </li>
+                <li> k = n − r — число информационных битов; </li>
+                <li> r — число проверочных битов. </li>
+              </ul> 
+          </div>
+          </section>
+          <section>
+            <h3> Где используется?</h3>
+              <ul>
+                <li> В некоторых прикладных программах в области хранения данных;</li>
+                <li> При построении дисковых массивов RAID 2;</li>
+                <li> В памяти типа ECC и позволяет «на лету» исправлять однократные и обнаруживать двукратные ошибки.</li>
+              </ul>
+          </section>
+          <section>
+            <h2> Предупреждение! </h2>
+            <div>
+              Далее будет представлено описание работы кодов Хэмминга, но почему так происходит в рамках данного доклада мы рассматривать не будем. В целом аудитория вполне может считать это магией! 
+            </div>
+            <div>
+              <img src={Magic} width="30%" />
+            </div>
+          </section>
+          <section>
+            <h3> Контрольные биты </h3>
+            <ol>
+              <li> Контрольные биты a<sub>i</sub> размещаются на позициях, соответствующих степеням двойки</li>
+              <li> Каждый контрольный бит a<sub>i</sub> отвечает за проверку чётности совокупности битов, номера позиций которых в двоичном представлении содержат единицу в i–м разряде</li>
+            </ol>
+          </section>
+          <section>
+            <div>
+              А вот так выглядит вычисление контрольных битов:
+            </div>
+            <div>
+              <img src={ControlBits} width="50%" />
+            </div>
+          </section>
+          <section>
+            <h3> Декодер </h3>
+            <div>
+              Правило построение контрольной суммы:
+              <ul>
+                <li> S1 - все нечетные разряды;</li>
+                <li> S2 - начиная со второго разряда по два разряда подряд через два разряда;</li>
+                <li> S3 - начиная с 4го разряда по 4 разряда через 4;</li>
+                <li> S4 - начиная с 8го разряда по 8 разрядов через 8 разрядов</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h3> Декодер </h3>
+            <div>
+              <img src={HammingCheck} width="50%" />
+            </div>
+          </section>
+          <section>
+            <h3>
+              Пример кодирования
+            </h3>
+            <p> Предположим, необходимо закодировать сообщение: "010110100111"</p>
+            <div className='r-stack'>
+              <div className='fragment fade-in-then-out'>
+                Определим число контрольных разрядов:
+                <img src={HammingEx0} width="50%" />
+              </div>
+              <div className='fragment fade-in-then-out'>
+                Установим контрольные разряды:
+                <img src={HammingEx1} width="50%" />
+              </div>
+              <div className='fragment fade-in-then-out'>
+                Определим значения разрядов:
+                <img src={HammingEx21} width="50%" />
+              </div>
+              <div className='fragment fade-in-then-out'>
+                Полученное сообщение:
+                <img src={HammingEx2} width="90%" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Пример декодирования</h3>
+            <div className='small-text'>
+                Предположим, что при передаче данного сообщения произошло искажение в каком-либо информационном разряде, например, в третьем
+                <img src={HammingEx3} width="40%" />
+            </div>
+            <div className='r-stack'>
+              <div className='fragment fade-in-then-out'>
+                Найдем контрольные суммы:
+                <img src={HammingEx31} width="50%" />
+              </div>
+              <div className='fragment'>
+              Полученный код S4S3S2S1 = `0011, следовательно искажение произошло в третьем разряде.
+              </div>
+            </div>
+          </section>
+        </section>
         <section>
           <section>
             <div className="two-columns-container">
